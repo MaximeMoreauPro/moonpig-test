@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 import { Product } from '@/products/entities/Product';
-import { CardItemUI } from './CardItemUI';
+import { CardItemUI } from './CardItemUI/CardItemUI';
 
 export type CardsUIProps = {
   items: Product[];
