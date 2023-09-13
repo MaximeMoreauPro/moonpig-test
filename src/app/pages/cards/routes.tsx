@@ -1,7 +1,7 @@
 import React, { lazy } from 'react';
-import { RouteObject, useMatch } from 'react-router-dom';
+import { RouteObject } from 'react-router-dom';
 
-import { LinkData } from '@/app/router';
+import { useNavLinksIfRouteMatch } from '@/app/common/hooks/useNavLinks';
 
 const Cards = lazy(() => import('./containers/Cards'));
 const CardDetail = lazy(() => import('./containers/CardDetail'));
@@ -21,17 +21,13 @@ export const cardsRoutes: RouteObject[] = [
   },
 ];
 
-export const useCardsNavBarLinks = (): LinkData[] => {
-  const cardsNavBarLinks: LinkData[] = [];
-
-  const isCardDetail = useMatch(CARD_DETAIL_ROUTE);
-
-  if (isCardDetail) {
-    cardsNavBarLinks.push({
+/**
+ * Display the 'Back to Cards' link if the current route is the Card Detail page
+ */
+export const useCardsNavBarLinks = () =>
+  useNavLinksIfRouteMatch(CARD_DETAIL_ROUTE, [
+    {
       to: CARDS_BASE_ROUTE,
       label: 'Back to Cards',
-    });
-  }
-
-  return cardsNavBarLinks;
-};
+    },
+  ]);
