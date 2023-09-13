@@ -37,9 +37,15 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|otf|svg)$/, // to import images and fonts
-        loader: 'url-loader',
-        options: { limit: false },
+        test: /\.otf$/, // to import fonts
+        loader: 'file-loader',
+        options: {
+          options: {
+            name: '[name].[ext]',
+            limit: 10000,
+            mimetype: 'application/font-woff',
+          },
+        },
       },
     ],
   },

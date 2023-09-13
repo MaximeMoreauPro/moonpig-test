@@ -7,10 +7,11 @@
   "homepage": "https://maximemoreaupro.github.io/moonpig-test",
   "scripts": {
     "serve": "webpack serve --mode development",
-    "build": " NODE_ENV=production HASH_ROUTER=true  webpack --mode production",
+    "build": "NODE_ENV=production webpack --mode production",
     "test": "jest",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy:gh-pages": "HASH_ROUTER=true npm run build",
+    "deploy:gh-pages": "gh-pages -d dist",
+    "deploy": "npm run deploy:gh-pages"
   },
   "devDependencies": {
     "@babel/core": "^7.22.15",
