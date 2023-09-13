@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 
 import { Product } from '@/products/entities/Product';
-import { CardItemUI } from './CardItemUI/CardItemUI';
+import { CardItemUI } from '../CardItemUI/CardItemUI';
+import { CardsContainer } from './CardsUI.styled';
 
 export type CardsUIProps = {
   items: Product[];
@@ -9,7 +10,7 @@ export type CardsUIProps = {
 };
 
 export const CardsUI = memo<CardsUIProps>(({ items, onCardClick }) => (
-  <div>
+  <CardsContainer>
     {items.map(card => (
       <CardItemUI
         key={card.number}
@@ -17,5 +18,5 @@ export const CardsUI = memo<CardsUIProps>(({ items, onCardClick }) => (
         onClick={() => onCardClick(card)}
       />
     ))}
-  </div>
+  </CardsContainer>
 ));
