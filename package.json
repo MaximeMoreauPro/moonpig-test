@@ -4,7 +4,6 @@
   "description": "Moonpig Test",
   "author": "Maxime Moreau",
   "license": "ISC",
-  "homepage": "https://maximemoreaupro.github.io/moonpig-test",
   "scripts": {
     "serve": "webpack serve --mode development",
     "build": "webpack --mode production",
