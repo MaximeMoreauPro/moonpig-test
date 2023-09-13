@@ -5,19 +5,23 @@ import { Root } from './Root';
 import { Cards } from './containers/Cards';
 import { CardDetail } from './containers/CardDetail';
 
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />,
-    children: [
-      {
-        path: 'cards',
-        element: <Cards />,
-      },
-      {
-        path: 'cards/:cardNumber',
-        element: <CardDetail />,
-      },
-    ],
-  },
-]);
+export const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Root />,
+      children: [
+        {
+          path: 'cards',
+          element: <Cards />,
+        },
+        {
+          path: 'cards/:cardNumber',
+          element: <CardDetail />,
+        },
+      ],
+    },
+  ],
+  // Github Page specific config
+  { basename: '/moonpig-test' },
+);
