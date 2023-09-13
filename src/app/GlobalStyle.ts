@@ -6,9 +6,9 @@ import BikoRegularOtf from '@/app/fonts/biko/Biko_Regular.otf';
 export const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Biko';
-        src: url(${BikoRegularOtf}) format('otf');
-        /* font-weight: 300;
-        font-style: normal; */
+        src: url(${BikoRegularOtf}) format('opentype');
+        font-weight: 300;
+        font-style: normal;
     }
 
     body {
