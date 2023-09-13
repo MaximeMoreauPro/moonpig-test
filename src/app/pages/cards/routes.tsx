@@ -1,6 +1,7 @@
-import { LinkData } from '@/app/router';
 import React, { lazy } from 'react';
 import { RouteObject, useMatch } from 'react-router-dom';
+
+import { LinkData } from '@/app/router';
 
 const Cards = lazy(() => import('./containers/Cards'));
 const CardDetail = lazy(() => import('./containers/CardDetail'));

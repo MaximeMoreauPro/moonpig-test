@@ -7,7 +7,7 @@
   "homepage": "https://maximemoreaupro.github.io/moonpig-test",
   "scripts": {
     "serve": "webpack serve --mode development",
-    "build": "HASH_ROUTER=true webpack --mode production",
+    "build": " NODE_ENV=production HASH_ROUTER=true  webpack --mode production",
     "test": "jest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -39,6 +39,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.15.0"
+    "react-router-dom": "^6.15.0",
+    "styled-components": "^6.0.7"
   }
 }

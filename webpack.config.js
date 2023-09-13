@@ -49,5 +49,5 @@ module.exports = {
       '@': path.resolve(__dirname, 'src'),
     },
   },
-  devtool: 'eval-source-map',
+  devtool: process.env.NODE_ENV === 'production' ? false : 'eval-source-map',
 };
