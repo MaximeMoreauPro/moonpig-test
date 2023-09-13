@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Link,
   RouteObject,
   createBrowserRouter,
   createHashRouter,
@@ -20,9 +19,39 @@ const routes: RouteObject[] = [
   },
 ];
 
-export const HomeNavBarLinks = () => {
+export type LinkData = {
+  to: string;
+  label: string;
+};
+
+export const useHomeNavBarLinks = (): LinkData[] => {
+  const homeNavBarLinks: LinkData[] = [];
+
   const isHome = useMatch(HOME_ROUTE);
-  return isHome && <Link to={CARDS_BASE_ROUTE}>Cards</Link>;
+
+  if (isHome) {
+    homeNavBarLinks.push({
+      to: CARDS_BASE_ROUTE,
+      label: 'Cards',
+    });
+  }
+
+  return homeNavBarLinks;
+};
+
+export const useNotHomeNavBarLinks = (): LinkData[] => {
+  const notHomeNavBarLinks: LinkData[] = [];
+
+  const isHome = useMatch(HOME_ROUTE);
+
+  if (!isHome) {
+    notHomeNavBarLinks.push({
+      to: HOME_ROUTE,
+      label: 'Back to Home',
+    });
+  }
+
+  return notHomeNavBarLinks;
 };
 
 // Github Page uses HashRouter because it doesn't support BrowserRouter
