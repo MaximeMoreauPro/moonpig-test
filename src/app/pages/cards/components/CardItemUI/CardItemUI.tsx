@@ -7,6 +7,6 @@ type CardItemUIProps = { card: Product; onClick: () => void };
 
 export const CardItemUI = memo<CardItemUIProps>(({ card, onClick }) => (
   <CardItemContainer onClick={onClick}>
-    <CardImage src={card.image} alt={card.title} />
+    <CardImage src={card.images[0]} alt={card.title} />
   </CardItemContainer>
 ));

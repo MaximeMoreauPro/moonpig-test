@@ -4,11 +4,11 @@ import { RouteObject } from 'react-router-dom';
 import { useNavLinksIfRouteMatch } from '@/app/common/hooks/useNavLinks';
 
 const Cards = lazy(() => import('./containers/Cards'));
-const CardDetail = lazy(() => import('./containers/CardDetail'));
+const CardDetails = lazy(() => import('./containers/CardDetails/CardDetails'));
 
 export const CARDS_BASE_ROUTE = 'cards';
 
-const CARD_DETAIL_ROUTE = `${CARDS_BASE_ROUTE}/:cardNumber`;
+const CARD_DETAILS_ROUTE = `${CARDS_BASE_ROUTE}/:cardNumber`;
 
 export const cardsRoutes: RouteObject[] = [
   {
@@ -16,16 +16,16 @@ export const cardsRoutes: RouteObject[] = [
     element: <Cards />,
   },
   {
-    path: CARD_DETAIL_ROUTE,
-    element: <CardDetail />,
+    path: CARD_DETAILS_ROUTE,
+    element: <CardDetails />,
   },
 ];
 
 /**
- * Display the 'Back to Cards' link if the current route is the Card Detail page
+ * Display the 'Back to Cards' link if the current route is the Card Details page
  */
 export const useCardsNavBarLinks = () =>
-  useNavLinksIfRouteMatch(CARD_DETAIL_ROUTE, [
+  useNavLinksIfRouteMatch(CARD_DETAILS_ROUTE, [
     {
       to: CARDS_BASE_ROUTE,
       label: 'Back to Cards',

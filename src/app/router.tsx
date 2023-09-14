@@ -36,7 +36,7 @@ export const useHomeNavBarLinks = () =>
 /**
  * Display the 'Back to Home' link if the current route is not the Home page
  */
-export const useNotHomeNavBarLinksBis = () =>
+export const useNotHomeNavBarLinks = () =>
   useNavLinksIfRouteNotMatch(HOME_ROUTE, [
     {
       to: HOME_ROUTE,

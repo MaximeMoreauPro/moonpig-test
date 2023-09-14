@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 // @ts-ignore
-import BikoRegularOtf from '@/app/fonts/biko/Biko_Regular.otf';
+import BikoRegularOtf from '@/app/assets/fonts/biko/Biko_Regular.otf';
 
 export const GlobalStyle = createGlobalStyle`
     @font-face {

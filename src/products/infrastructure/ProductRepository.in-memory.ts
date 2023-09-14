@@ -15,6 +15,14 @@ export class InMemoryProductRepository implements ProductRepository {
     return Promise.resolve(filteredProducts);
   }
 
+  fetchProductByNumber(productNumber: Product['number']) {
+    const product = this.products.find(
+      ({ number }) => number === productNumber,
+    );
+
+    return Promise.resolve(product);
+  }
+
   initAvailableProducts(products: Product[]) {
     this.products = products;
   }
