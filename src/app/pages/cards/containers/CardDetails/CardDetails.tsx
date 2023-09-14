@@ -3,10 +3,12 @@ import React from 'react';
 import { CardDetailsUI } from '../../components/CardDetailsUI';
 import { useViewDetailsOfCard } from './useViewDetailsOfCard';
 
-const CardDetails = () => {
-  const { card, errorMessage } = useViewDetailsOfCard();
+export const CardDetails = () => {
+  const { card, errorMessage, isCardLoading } = useViewDetailsOfCard();
+
+  if (isCardLoading) {
+    return <div>Loading...</div>;
+  }
 
   return card ? <CardDetailsUI card={card} /> : <div>{errorMessage}</div>;
 };
-
-export default CardDetails;

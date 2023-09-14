@@ -3,8 +3,8 @@ import { RouteObject } from 'react-router-dom';
 
 import { useNavLinksIfRouteMatch } from '@/app/common/hooks/useNavLinks';
 
-const Cards = lazy(() => import('./containers/Cards'));
-const CardDetails = lazy(() => import('./containers/CardDetails/CardDetails'));
+const CardListings = lazy(() => import('./containers/CardListings'));
+const CardDetails = lazy(() => import('./containers/CardDetails'));
 
 export const CARDS_BASE_ROUTE = 'cards';
 
@@ -13,7 +13,7 @@ const CARD_DETAILS_ROUTE = `${CARDS_BASE_ROUTE}/:cardNumber`;
 export const cardsRoutes: RouteObject[] = [
   {
     path: CARDS_BASE_ROUTE,
-    element: <Cards />,
+    element: <CardListings />,
   },
   {
     path: CARD_DETAILS_ROUTE,

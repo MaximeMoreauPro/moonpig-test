@@ -2,11 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { DataDisplayerUI } from '@/app/common/components/DataDIsplayer';
-import { useAvailableCards } from '@/app/hooks/useAvailableCards';
-import { CardsUI, CardsUIProps } from '../components/CardsUI/CardsUI';
+import { useViewListOfAvailableCards } from '@/app/pages/cards/containers/CardListings/useViewListOfAvailableCards';
+import { CardsUI, CardsUIProps } from '@/app/pages/cards/components/CardsUI';
 
-export default function Cards() {
-  const { availableCards, isAvailableCardsLoading } = useAvailableCards();
+export function CardListings() {
+  const { availableCards, isAvailableCardsLoading } =
+    useViewListOfAvailableCards();
 
   const navigate = useNavigate();
   const onCardClick: CardsUIProps['onCardClick'] = card =>

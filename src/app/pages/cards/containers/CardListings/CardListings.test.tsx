@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, screen } from '@/app/test-utils';
 
-import Cards from './Cards';
+import { CardListings } from './CardListings';
 import { ProductRepositoryContext } from '@/app/contexts/ProductRepositoryContext';
 import { InMemoryProductRepository } from '@/products/infrastructure/ProductRepository.in-memory';
 import { ProductCategory } from '@/products/entities/ProductCategory';
 import { Product } from '@/products/entities/Product';
 
-describe('Cards', () => {
+describe('CardListing', () => {
   it('should display "No cards available" if there is no cards', async () => {
     renderCardsWithProducts([]);
 
@@ -15,7 +15,7 @@ describe('Cards', () => {
     expect(await screen.findByText('No cards available')).toBeInTheDocument();
   });
 
-  it('should display the cards', async () => {
+  it('should display the cards if there are available cards', async () => {
     renderCardsWithProducts([
       {
         number: '1',
@@ -51,7 +51,7 @@ function renderCardsWithProducts(products: Product[]) {
 
   return render(
     <ProductRepositoryContext.Provider value={productRepository}>
-      <Cards />
+      <CardListings />
     </ProductRepositoryContext.Provider>,
   );
 }
