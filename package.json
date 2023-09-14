@@ -9,8 +9,7 @@
     "serve": "webpack serve --mode development",
     "build": "NODE_ENV=production webpack --mode production",
     "test": "jest --verbose --runInBand",
-    "test-warning": "node --trace-warnings node_modules/.bin/jest --detectOpenHandles --verbose",
-    "predeploy:gh-pages": "HASH_ROUTER=true ASSET_PATH=/moonpig-test npm run build",
+    "predeploy:gh-pages": "HASH_ROUTER=true npm run build",
     "deploy:gh-pages": "gh-pages -d dist",
     "deploy": "npm run deploy:gh-pages"
   },
