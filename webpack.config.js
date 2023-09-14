@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/dist'), // the bundle output path
     filename: 'bundle.js', // the name of the bundle
-    publicPath: '/',
+    publicPath: process.env.ASSET_PATH || '/',
   },
   target: 'web',
   plugins: [
