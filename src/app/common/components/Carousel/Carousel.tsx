@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { CardImage } from '../CardItemUI/CardItemUI.styled';
+import { CardImage } from '../../../pages/cards/components/CardItemUI/CardItemUI.styled';
 import { CarouselContainer, NavButton } from './Carousel.styled';
 
 type CarouselProps = {
@@ -16,18 +16,20 @@ export function Carousel({ images, className }: CarouselProps) {
   return (
     <CarouselContainer className={className}>
       <NavButton
-        enabled={canGoPrevious}
+        $enabled={canGoPrevious}
         aria-label="Show previous image"
         onClick={previous}
+        data-testid="previous-image"
       >
         {/* left-pointing arrow */}
         &#8592;
       </NavButton>
-      {<CardImage src={currentImage} />}
+      {<CardImage src={currentImage} data-testid="current-image" />}
       <NavButton
-        enabled={canGoNext}
+        $enabled={canGoNext}
         aria-label="Show next image"
         onClick={next}
+        data-testid="next-image"
       >
         {/* right-pointing arrow */}
         &#8594;

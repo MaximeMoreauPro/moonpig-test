@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import { Product } from '@/products/entities/Product';
 import { useProductRepository } from '@/app/contexts/ProductRepositoryContext';
@@ -9,6 +9,8 @@ import { useLoading } from '@/app/common/hooks/useLoading';
 export function useViewDetailsOfCard() {
   const [card, setCard] = useState<Product>();
   const [errorMessage, setErrorMessage] = useState<string>();
+
+  const { pathname } = useLocation();
 
   const { cardNumber } = useParams<{ cardNumber: string }>();
 

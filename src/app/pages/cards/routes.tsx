@@ -1,5 +1,5 @@
 import React, { lazy } from 'react';
-import { RouteObject } from 'react-router-dom';
+import { RouteObject, createMemoryRouter } from 'react-router-dom';
 
 import { useNavLinksIfRouteMatch } from '@/app/common/hooks/useNavLinks';
 

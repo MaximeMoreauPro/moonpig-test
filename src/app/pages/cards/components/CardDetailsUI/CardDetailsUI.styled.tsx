@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Carousel } from '../Carousel';
+import { Carousel } from '../../../../common/components/Carousel';
 
 export const StyledCarousel = styled(Carousel)`
   width: 350px;

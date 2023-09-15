@@ -18,6 +18,7 @@ const routes: RouteObject[] = [
   {
     path: HOME_ROUTE,
     element: <Root />,
+    errorElement: <div>404</div>,
     children: [...cardsRoutes],
   },
 ];

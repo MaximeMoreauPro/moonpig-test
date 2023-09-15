@@ -6,13 +6,15 @@ export const CarouselContainer = styled.div`
 `;
 
 type NavButtonProps = {
-  enabled: boolean;
+  $enabled: boolean;
 };
 
-export const NavButton = styled.button.attrs<NavButtonProps>(({ enabled }) => ({
-  disabled: !enabled,
-  'aria-disabled': !enabled,
-}))`
+export const NavButton = styled.button.attrs<NavButtonProps>(
+  ({ $enabled }) => ({
+    disabled: !$enabled,
+    'aria-disabled': !$enabled,
+  }),
+)`
   border: none;
   background-color: transparent;
   font-size: 30px;
