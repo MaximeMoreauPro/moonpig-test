@@ -24,10 +24,9 @@ This app uses `react` and `react-dom` to build the web components and pages, `re
 I kept it simple so there is no other third party library.
 
 I'm also a big fan of **TypeScript**.
-Here's an advanced use case with generic types for example
-[DataDisplayerUI.tsx](src/app/common/components/DataDisplayerUI.tsx)
+Here's an advanced use case with generic types in [DataDisplayerUI.tsx](src/app/common/components/DataDisplayerUI.tsx)
 
-The build system is based on `webpack` and `babel` and related plugins because its customisation is more powerfull. I've good experience with these tools.
+The build system is based on `webpack` and `babel` and related plugins because its customisation is more powerfull than the default build system provided by `create-react-app`. I've good experience with these tools.
 
 ## Testing
 
@@ -65,7 +64,7 @@ I use `Context` as a Dependency Injection System so it's simple to change an imp
 
 With more time I would have written `Storybook` stories for Dumb/UI Components. I think unit tests with [jest-styled-components](https://styled-components.com/docs/tooling#jest-integration) is not efficient for these kind of components most of the time especially because CSS is tricky to test programmaticaly and can evolve too often during the life of a project.
 
-I'd publish these stories on `Chromatic` to check their rendering within multiple browsers and check if there is no UI regression. It's also a great tool for UI Designers that can have a look at the stories to check if it matches the Design System defined in _Figma_ for ex.
+I'd publish these stories on `Chromatic` to check their rendering within multiple browsers and check if there is no UI regression. It's also a great tool for UI Designers who can have a look at the stories to check if it matches the Design System defined in _Figma_ for example
 
 #### E2E Test
 
@@ -84,11 +83,11 @@ npm run deploy -m "Deployment Comment"
 
 1. Add a CI/CD with the following steps
 
-- static code analysis: code formating with `prettier`, linting with `ESLint` plugins, type checking with `TypeScript`, `SonarQube` for code quality, `Snyk` or `CodeQL` for security...
+- static code analysis: code formating with `prettier`, linting with `ESLint` plugins, type checking with `TypeScript`, `SonarQube` for code quality, `Dependabot`, `Snyk` or `CodeQL` for security...
 - run the unit and component tests with code coverage limits
 - mutation testing with `Stryker.js` to assess the relevance and robustness of the tests with a mutation score which is more relevant than just the code coverage percent
 - deploy the app on a pre-production environment and then run E2E tests targeting it
-- add performance, SEO, accessibility tests with the LightHouse API targeting the pre-production environment with thresholds
+- add performance, SEO, accessibility tests with the `LightHouse CI` tools targeting the pre-production environment with thresholds
 - makes the release to production automatic or send a message on a Slack channel for example asking for developers approbation if all the previous steps succeed or explaining the cause of failure.
 
 2. Improve the accessibilty, mobile/tablet responsiveness, browsers compatibility, performance
