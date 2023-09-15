@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { DataDisplayerUI } from '@/app/common/components/DataDIsplayer';
+import { DataDisplayerUI } from '@/app/common/components/DataDisplayerUI';
 import { useViewListOfAvailableCards } from '@/app/pages/cards/containers/CardListings/useViewListOfAvailableCards';
 import { CardsUI, CardsUIProps } from '@/app/pages/cards/components/CardsUI';
 

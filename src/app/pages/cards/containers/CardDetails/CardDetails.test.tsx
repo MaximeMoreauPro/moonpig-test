@@ -1,4 +1,5 @@
 import React from 'react';
+import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import user from '@testing-library/user-event';
@@ -7,10 +8,9 @@ import { ProductRepositoryContext } from '@/app/contexts/ProductRepositoryContex
 import { InMemoryProductRepository } from '@/products/infrastructure/ProductRepository.in-memory';
 import { ProductCategory } from '@/products/entities/ProductCategory';
 import { Product } from '@/products/entities/Product';
-import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 import { cardsRoutes } from '@/app/pages/cards/routes';
 
-describe('CardDetails', () => {
+describe('Container: CardDetails', () => {
   it('should display an error message if the card does not exist', async () => {
     renderCardDetails({ cardNumber: '1', products: [] });
 

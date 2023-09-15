@@ -43,7 +43,7 @@ describe('Use Case: view details of a card', () => {
     fixture.thenTheDisplayedErrorMessageIs(undefined);
   });
 
-  it(`should display the error message "Apologies, but we don't propose the card with number <card number>"`, async () => {
+  it(`should display an error message if the card does not exist"`, async () => {
     fixture.givenAvailableProductsAre([]);
     await fixture.whenUserSelectsCard('1');
     fixture.thenTheDisplayedErrorMessageIs(

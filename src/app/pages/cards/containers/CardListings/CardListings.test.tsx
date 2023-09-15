@@ -17,7 +17,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => mockedUseNavigate,
 }));
 
-describe('CardListings', () => {
+describe('Container: CardListings', () => {
   it('should display "No cards available" if there is no available cards', async () => {
     renderCardListings({ products: [] });
 
