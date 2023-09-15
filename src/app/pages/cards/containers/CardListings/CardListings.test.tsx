@@ -8,7 +8,7 @@ import { ProductRepositoryContext } from '@/app/contexts/ProductRepositoryContex
 import { InMemoryProductRepository } from '@/products/infrastructure/ProductRepository.in-memory';
 import { ProductCategory } from '@/products/entities/ProductCategory';
 import { Product } from '@/products/entities/Product';
-import { cardsRoutes } from '../../routes';
+import { cardsRoutes } from '@/app/pages/cards/routes';
 
 const mockedUseNavigate = jest.fn();
 

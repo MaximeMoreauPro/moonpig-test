@@ -8,7 +8,7 @@ import { InMemoryProductRepository } from '@/products/infrastructure/ProductRepo
 import { ProductCategory } from '@/products/entities/ProductCategory';
 import { Product } from '@/products/entities/Product';
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
-import { cardsRoutes } from '../../routes';
+import { cardsRoutes } from '@/app/pages/cards/routes';
 
 describe('CardDetails', () => {
   it('should display an error message if the card does not exist', async () => {

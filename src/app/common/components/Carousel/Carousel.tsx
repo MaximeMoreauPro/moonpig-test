@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import { CardImage } from '../../../pages/cards/components/CardItemUI/CardItemUI.styled';
+import { CardImage } from '@/app/pages/cards/components/CardItemUI/CardItemUI.styled';
+
 import { CarouselContainer, NavButton } from './Carousel.styled';
 
 type CarouselProps = {

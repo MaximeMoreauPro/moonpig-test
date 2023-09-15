@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { CardDetailsUI } from '../../components/CardDetailsUI';
+import { CardDetailsUI } from '@/app/pages/cards/components/CardDetailsUI';
+
 import { useViewDetailsOfCard } from './useViewDetailsOfCard';
 
 export const CardDetails = () => {
-  debugger;
   const { card, errorMessage, isCardLoading } = useViewDetailsOfCard();
 
   if (isCardLoading) {
