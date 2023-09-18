@@ -11,10 +11,25 @@ The top left link _Cards_ forwards to the card listings page
 
 ## Installation
 
+installation
+
 ```bash
 git clone git@github.com:MaximeMoreauPro/moonpig-test.git
 cd moonpig-test
 npm install
+```
+
+local development build start
+
+```bash
+npm run serve
+```
+
+local production build start
+
+```bash
+npm run build
+npx serve dist
 ```
 
 ## Tech Stack
@@ -90,8 +105,10 @@ npm run deploy -m "Deployment Comment"
 - add performance, SEO, accessibility tests with the `LightHouse CI` tools targeting the pre-production environment with thresholds
 - makes the release to production automatic or send a message on a Slack channel for example asking for developers approbation if all the previous steps succeed or explaining the cause of failure.
 
-2. Improve the accessibilty, mobile/tablet responsiveness, browsers compatibility, performance
+2. Improve the accessibilty, mobile/tablet responsiveness, browsers compatibility, performance, SEO...
 
 3. Add a production web app monitoring with `Sentry` and `Checkly` for example
+
+4. Add documentation explaining the directory/file structure and code guidelines/principles
 
 ...and more stuffs according to the need/constraints and team suggestions :)
